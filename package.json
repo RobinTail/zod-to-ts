@@ -1,15 +1,15 @@
 {
-  "name": "zod-to-ts",
+  "name": "@express-zod-api/zod-to-ts",
   "version": "1.1.1",
   "type": "module",
   "description": "generate TypeScript types from your Zod schema",
   "repository": {
     "type": "git",
-    "url": "https://github.com/sachinraja/zod-to-ts.git"
+    "url": "https://github.com/RobinTail/zod-to-ts"
   },
-  "homepage": "https://github.com/sachinraja/zod-to-ts#readme",
+  "homepage": "https://github.com/RobinTail/zod-to-ts#readme",
   "bugs": {
-    "url": "https://github.com/sachinraja/zod-to-ts/issues"
+    "url": "https://github.com/RobinTail/express-zod-api/issues"
   },
   "main": "dist/index.cjs",
   "exports": {
