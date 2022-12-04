@@ -66,6 +66,10 @@
     "zod": "3.19.1"
   },
   "sideEffects": false,
+  "private": false,
+  "publishConfig": {
+    "access": "public"
+  },
   "lint-staged": {
     "*.{js,ts,md,json,yaml}": "dprint fmt"
   },
