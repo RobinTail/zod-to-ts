@@ -1,3 +1,4 @@
+import { describe, expect, it } from 'vitest'
 import { z } from 'zod'
 import { printNode, withGetType, zodToTs } from '../src'
 
@@ -57,7 +58,7 @@ const dateType = withGetType(
   (ts) => ts.factory.createIdentifier('Date'),
 )
 
-export const example = z.object({
+const example = z.object({
   a: z.string(),
   b: z.number(),
   c: z.array(z.object({
@@ -101,11 +102,94 @@ export const example = z.object({
   ]),
 })
 
-const { node, store } = zodToTs(example, 'Example', { resolveNativeEnums: true })
+describe('Example', () => {
+  it('should produce the expected results', () => {
+    const { node, store } = zodToTs(example, 'Example', { resolveNativeEnums: true })
 
-console.log(printNode(node))
+    const output = [printNode(node)].concat(store.nativeEnums.map((e) => printNode(e))).join('\n\n')
 
-console.log('\n\nNative Enums\n---------------')
-for (const e of store.nativeEnums) {
-  console.log(printNode(e))
-}
+    expect(output).toMatchInlineSnapshot(`
+      "{
+          a: string;
+          b: number;
+          c: {
+              a: string;
+          }[];
+          d: boolean;
+          e: Example[\\"b\\"];
+          f: {
+              a: number;
+          } | \\"hi\\";
+          g: \\"hi\\" | \\"bye\\";
+          h: (number & bigint) & (number & string);
+          i: Date;
+          j?: undefined;
+          k: null;
+          l?: void | undefined;
+          m?: any;
+          n?: unknown;
+          o: never;
+          p?: string | undefined;
+          q: {
+              a?: string | undefined;
+              b?: number | undefined;
+              c?: string[] | undefined;
+              d?: {
+                  e: string;
+              } | undefined;
+          } | null;
+          r: [
+              string,
+              number,
+              {
+                  name: string;
+              }
+          ];
+          s: {
+              [x: string]: {
+                  de: {
+                      me: ([
+                          string,
+                          {
+                              a: string;
+                          }
+                      ] | bigint)[];
+                  };
+              };
+          };
+          t: Map<string, {
+              p: string;
+          }[]>;
+          u: Set<string>;
+          v: (string & number) | bigint;
+          w: Promise<number>;
+          x: (args_0: (string | undefined) | null, args_1: boolean, args_2: boolean, ...args_3: unknown[]) => string;
+          y?: string;
+          z: (string | number) & ((bigint | undefined) | null);
+          aa: Fruits;
+          bb: Date;
+          cc: Example;
+          dd: unknown;
+          ee: {
+              kind: \\"circle\\";
+              radius: number;
+          } | {
+              kind: \\"square\\";
+              x: number;
+          } | {
+              kind: \\"triangle\\";
+              x: number;
+              y: number;
+          };
+      }
+
+      enum Fruits {
+          \\"5\\" = \\"A\\",
+          Apple = \\"apple\\",
+          Banana = \\"banana\\",
+          Cantaloupe = \\"cantaloupe\\",
+          A = 5
+      }"
+    `)
+  })
+})

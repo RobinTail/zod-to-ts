@@ -244,7 +244,6 @@ const zodToTsNode = (
 
       const node = f.createTypeLiteralNode([f.createIndexSignature(
         undefined,
-        undefined,
         [f.createParameterDeclaration(
           undefined,
           undefined,
