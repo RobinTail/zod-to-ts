@@ -40,7 +40,6 @@
     "prepare": "husky install",
     "prepublishOnly": "pnpm build",
     "test": "vitest",
-    "example": "tsx test/example.ts",
     "sync": "git checkout main && git fetch upstream && git merge upstream/main main"
   },
   "dependencies": {
