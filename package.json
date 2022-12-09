@@ -29,7 +29,7 @@
     "generator"
   ],
   "scripts": {
-    "build": "pnpm clean && tsup",
+    "build": "yarn clean && tsup",
     "watch": "tsup --watch --no-dts",
     "clean": "rimraf dist",
     "format": "dprint fmt",
@@ -38,7 +38,7 @@
     "lint:types": "tsc",
     "lint:js": "eslint .",
     "prepare": "husky install",
-    "prepublishOnly": "pnpm build",
+    "prepublishOnly": "yarn build",
     "test": "vitest",
     "sync": "git checkout main && git fetch upstream && git merge upstream/main main"
   },
