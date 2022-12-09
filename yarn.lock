@@ -2309,10 +2309,10 @@ tsutils@^3.21.0:
   dependencies:
     tslib "^1.8.1"
 
-tsx@3.10.4:
-  version "3.10.4"
-  resolved "https://registry.yarnpkg.com/tsx/-/tsx-3.10.4.tgz#f46a876747f517263027e68121335bb294641b34"
-  integrity sha512-sBxeSgUAPVqRgBPk6TY0yFiNDUlva9rA+Nj46oYEd89FXVD2MFWChFhybTtq7Qh1Ies/O75mQNwpLuO7m8gToA==
+tsx@3.12.1:
+  version "3.12.1"
+  resolved "https://registry.yarnpkg.com/tsx/-/tsx-3.12.1.tgz#d07532004c573bfea50a4ac687aa7270b3e34277"
+  integrity sha512-Rcg1x+rNe7qwlP8j7kx4VjP/pJo/V57k+17hlrn6a7FuQLNwkaw5W4JF75tYornNVCxkXdSUnqlIT8JY/ttvIw==
   dependencies:
     "@esbuild-kit/cjs-loader" "^2.4.0"
     "@esbuild-kit/core-utils" "^3.0.0"
