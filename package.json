@@ -51,7 +51,7 @@
   "devDependencies": {
     "@types/node": "18.11.13",
     "@typescript-eslint/eslint-plugin": "5.46.0",
-    "@typescript-eslint/parser": "5.46.0",
+    "@typescript-eslint/parser": "5.47.1",
     "dprint": "0.33.0",
     "eslint": "8.29.0",
     "eslint-config-prettier": "8.5.0",
