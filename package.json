@@ -54,7 +54,7 @@
     "@typescript-eslint/parser": "5.46.0",
     "dprint": "0.33.0",
     "eslint": "8.29.0",
-    "eslint-config-prettier": "8.5.0",
+    "eslint-config-prettier": "8.6.0",
     "husky": "8.0.2",
     "lint-staged": "13.1.0",
     "npm-run-all": "4.1.5",
